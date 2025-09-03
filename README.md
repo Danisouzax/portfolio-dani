@@ -42,9 +42,9 @@ This portfolio highlights some of my projects:
 ---
 
 ## 📫 Contact
-- 📧 Email: [danisouzax@gmail.com](mailto:danisouzax@gmail.com)  
-- 💼 LinkedIn: [linkedin.com/in/danioak](https://www.linkedin.com/in/danioak)  
-- 💻 GitHub: [github.com/danisouzax](https://github.com/danisouzax)  
+- 📧 Email: [danisouzax@gmail.com](danisouzax)  
+- 💼 LinkedIn: [linkedin.com/in/danioak](danioak)  
+- 💻 GitHub: [github.com/danisouzax](danisouzax)  
 
 ---
 
