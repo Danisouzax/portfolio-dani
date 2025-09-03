@@ -160,3 +160,54 @@ footer a {
 footer a:hover {
   color: #fff;
 }
+/* ===== Responsividade Resume ===== */
+
+/* Layout padrão em telas grandes */
+.resume-container {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+}
+
+/* Sidebar (lado esquerdo) */
+.resume-sidebar {
+  flex: 1;
+  max-width: 280px;
+  background: #f9f9f9;
+  padding: 20px;
+  border-radius: 12px;
+}
+
+/* Conteúdo principal */
+.resume-content {
+  flex: 3;
+  padding: 20px;
+}
+
+/* ===== Ajuste para telas menores ===== */
+@media (max-width: 768px) {
+  .resume-container {
+    flex-direction: column;   /* muda para uma coluna */
+  }
+
+  .resume-sidebar {
+    max-width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .resume-content {
+    padding: 10px;
+  }
+
+  .resume-sidebar img {
+    display: block;
+    margin: 0 auto 15px; /* centraliza a foto */
+    border-radius: 50%;
+    max-width: 140px;
+  }
+
+  h1, h2, h3 {
+    text-align: center; /* centraliza títulos */
+  }
+}
+
