@@ -1,0 +1,162 @@
+/* ===== Layout geral ===== */
+body {
+  font-family: 'Poppins', sans-serif;
+  background: #f9f9f9;
+  color: #333;
+  margin: 0;
+}
+
+.resume-container {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  max-width: 1200px;
+  margin: 40px auto;
+  background: #fff;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+/* ===== Coluna esquerda ===== */
+.resume-sidebar {
+  background: #f4f4f4;
+  padding: 30px 20px;
+}
+
+.profile {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.profile img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 15px;
+}
+
+.profile h1 {
+  font-size: 1.5rem;
+  margin-bottom: 5px;
+}
+
+.profile h1 span {
+  color: #9a6277; /* Rosa antigo do seu portfólio */
+}
+
+.profile h2 {
+  font-size: 0.9rem;
+  font-weight: 400;
+  color: #777;
+}
+
+.sidebar-section {
+  margin-bottom: 25px;
+}
+
+.sidebar-section h3 {
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: #9a6277;
+}
+
+.sidebar-section p, .sidebar-section li {
+  font-size: 0.85rem;
+  margin-bottom: 5px;
+  color: #555;
+}
+
+/* Skills com barra */
+.skill {
+  margin-bottom: 15px;
+}
+
+.skill span {
+  font-size: 0.85rem;
+  display: block;
+  margin-bottom: 5px;
+}
+
+.skill-bar {
+  background: #ddd;
+  border-radius: 20px;
+  height: 8px;
+  overflow: hidden;
+}
+
+.skill-progress {
+  background: #9a6277;
+  height: 100%;
+  transition: width 1s ease;
+}
+
+/* ===== Coluna direita ===== */
+.resume-main {
+  padding: 40px;
+}
+
+.resume-main section {
+  margin-bottom: 40px;
+}
+
+.resume-main h2 {
+  font-size: 1.4rem;
+  margin-bottom: 15px;
+  color: #2d2d2d;
+  border-bottom: 2px solid #eee;
+  padding-bottom: 5px;
+}
+
+.resume-main h3 {
+  font-size: 1rem;
+  color: #9a6277;
+  margin-bottom: 8px;
+}
+
+.resume-main p {
+  font-size: 0.95rem;
+  color: #444;
+  line-height: 1.6;
+}
+
+.skills-list {
+  list-style: disc inside;
+  color: #444;
+}
+/* ===== Footer ===== */
+footer {
+  background: #2d2d2d;
+  padding: 20px 40px;
+  color: #fff;
+  margin-top: 60px;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: auto;
+}
+
+footer p {
+  font-size: 0.9rem;
+  color: #bbb;
+}
+
+.footer-links {
+  display: flex;
+  gap: 20px;
+}
+
+footer a {
+  color: #9a6277;
+  font-size: 0.9rem;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+footer a:hover {
+  color: #fff;
+}
