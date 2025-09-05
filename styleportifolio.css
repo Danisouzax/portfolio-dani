@@ -61,6 +61,23 @@ body {
   transform: translateY(-3px);
 }
 
+.btn {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 12px 25px;
+  background-color: #9a6277;
+  color: white;
+  font-weight: bold;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: background 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #f17fa7;
+}
+
+
 /* ===== Sections ===== */
 section {
   padding: 80px 20px;
