@@ -1,13 +1,10 @@
-/* ===== Reset & Base ===== */
+/* ===== Reset ===== */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* A mágica para o footer fixo:
-   O body se torna um container flexível que ocupa 100% da altura da tela 
-*/
 body {
   font-family: 'Poppins', sans-serif;
   background: #fafafa;
@@ -17,16 +14,10 @@ body {
   flex-direction: column;
   min-height: 100vh; 
 }
-
-/* ===== Layout Principal ===== */
-/* Envolva seu conteúdo principal (Hero, Sections ou Resume) em uma tag <main>.
-   O 'flex: 1' faz esse bloco crescer e empurrar o footer para o fim.
-*/
 main, .resume-container {
   flex: 1; 
 }
-
-/* ===== Hero Section ===== */
+/* ===== Hero ===== */
 .hero {
   background: url('mesafofa.jpg') no-repeat center center/cover;
   height: 100vh;
@@ -38,7 +29,7 @@ main, .resume-container {
 }
 
 .hero .overlay {
-  background: rgba(0, 0, 0, 0.35);
+  background: rgba(0, 0, 0, 0.35); /* mais suave */
   padding: 50px;
   border-radius: 16px;
 }
@@ -50,7 +41,7 @@ main, .resume-container {
 }
 
 .hero h1 span {
-  color: #f19fbd;
+  color: #f19fbd; /* destaque rosa antigo */
 }
 
 .hero h2 {
@@ -59,26 +50,40 @@ main, .resume-container {
   margin-bottom: 25px;
 }
 
-/* ===== Buttons & UI ===== */
-.resume, .btn {
+.resume {
   display: inline-block;
   background: #9a6277;
   color: #fff;
   padding: 14px 35px;
-  border-radius: 30px;
+  border-radius: 30px; /* pill-style */
   text-decoration: none;
   font-weight: 600;
   transition: all 0.3s ease;
-  border: none;
-  cursor: pointer;
 }
 
-.resume:hover, .btn:hover {
+.resume:hover {
   background: #7a4c5d;
   transform: translateY(-3px);
 }
 
-/* ===== Sections Gerais ===== */
+.btn {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 12px 25px;
+  background-color: #9a6277;
+  color: white;
+  font-weight: bold;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: background 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #f17fa7;
+}
+
+
+/* ===== Sections ===== */
 section {
   padding: 80px 20px;
   max-width: 1100px;
@@ -93,14 +98,16 @@ h2 {
   font-weight: 600;
 }
 
-/* ===== About & Skills ===== */
+/* ===== About ===== */
 #about p {
   max-width: 850px;
   margin: auto;
   color: #555;
   font-size: 1.15rem;
+  line-height: 1.8;
 }
 
+/* ===== Skills ===== */
 .skills-container {
   display: flex;
   flex-wrap: wrap;
@@ -109,12 +116,18 @@ h2 {
   margin-top: 25px;
 }
 
-.skill-tag { /* Renomeado para não conflitar com a barra de progresso */
+.skill {
   background: #9a6277;
   color: white;
   padding: 10px 18px;
   border-radius: 25px;
   font-weight: 500;
+  font-size: 0.95rem;
+  transition: transform 0.2s ease;
+}
+
+.skill:hover {
+  transform: scale(1.05);
 }
 
 /* ===== Portfolio ===== */
@@ -123,6 +136,7 @@ h2 {
   flex-wrap: wrap;
   justify-content: center;
   gap: 25px;
+  margin-top: 25px;
 }
 
 .project {
@@ -131,7 +145,12 @@ h2 {
   overflow: hidden;
   background: #fff;
   box-shadow: 0 2px 6px rgba(0,0,0,0.08);
-  transition: transform 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.12);
 }
 
 .project img {
@@ -140,74 +159,104 @@ h2 {
   object-fit: cover;
 }
 
-/* ===== Contato ===== */
+.project h3 {
+  padding: 15px;
+  font-size: 1.1rem;
+  color: #2d2d2d;
+  font-weight: 500;
+}
+
+/* ===== CONTATO ===== */
 #contact {
   background: #f9f9f9;
+  padding: 80px 20px;
+}
+
+#contact h2 {
+  font-size: 2rem;
+  margin-bottom: 40px;
+  color: #2d2d2d;
+  text-align: center;
 }
 
 .contact-container {
   display: flex;
   justify-content: center;
-  gap: 40px;
-  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: 40px; /* espaço entre os itens */
+  flex-wrap: wrap; /* quebra em várias linhas no mobile */
+}
+
+.contact-item {
+  text-align: center;
+  flex: 1 1 180px; /* largura flexível */
+  max-width: 220px;
 }
 
 .contact-item a {
   display: flex;
-  flex-direction: column;
+  flex-direction: column; /* ícone em cima, texto embaixo */
   align-items: center;
   text-decoration: none;
   color: inherit;
+  transition: transform 0.3s ease;
 }
 
-/* ===== Resume Layout (Específico) ===== */
-.resume-container {
-  display: grid;
-  grid-template-columns: 280px 1fr;
-  background: #fff;
-  max-width: 1200px;
-  margin: 40px auto;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-  border-radius: 12px;
-  overflow: hidden;
+.contact-item a:hover {
+  transform: translateY(-5px);
 }
 
-.resume-sidebar {
-  background: #f5f5f5;
-  padding: 40px 20px;
+.contact-item .icon {
+  width: 48px;
+  height: 48px;
+  margin-bottom: 10px;
+  transition: transform 0.3s ease;
 }
 
-.resume-main {
-  padding: 40px;
+.contact-item:hover .icon {
+  transform: scale(1.1);
 }
 
-/* Progress Bars */
-.skill-bar {
-  background: #eee;
-  border-radius: 20px;
-  height: 8px;
-  margin-bottom: 15px;
+.contact-item h3, 
+.contact-item p {
+  margin: 5px 0;
+  color: #333;
 }
 
-.skill-progress {
-  height: 100%;
-  background: #9a6277;
-  transition: width 1s ease;
+.contact-item a:hover p,
+.contact-item a:hover h3 {
+  color: #9a6277;
 }
 
-/* ===== Footer (O que você quer corrigir) ===== */
+
+/* Social icons inside the last column */
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 8px;
+}
+
+.social-links a {
+  font-size: 1.4rem;
+  color: #9a6277;
+  transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+  color: #2d2d2d;
+}
+
+/* ===== Footer ===== */
 footer {
   background: #2d2d2d;
-  padding: 25px 40px;
+  padding: 20px 40px;
   color: #fff;
-  width: 100%;
-  /* margin-top: auto garante que ele seja empurrado se o conteúdo for pequeno */
-  margin-top: auto; 
 }
 
 .footer-container {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-between; /* texto esquerda, botão direita */
   align-items: center;
   max-width: 1200px;
   margin: auto;
@@ -219,6 +268,169 @@ footer p {
 }
 
 footer .back-to-top {
-  color: #f19fbd;
+  color: #9a6277;
+  font-size: 0.9rem;
   text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+footer .back-to-top:hover {
+  color: #fff;
+}
+
+/* ===== Resume Layout ===== */
+body {
+  font-family: 'Poppins', sans-serif;
+  background: #fafafa;
+  color: #2d2d2d;
+  line-height: 1.6;
+}
+
+.resume-container {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  min-height: 100vh;
+  background: #fff;
+  max-width: 1200px;
+  margin: 40px auto;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+/* ===== Left Column ===== */
+.resume-sidebar {
+  background: #f5f5f5;
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.resume-sidebar img {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 20px;
+  border: 4px solid #9a6277;
+}
+
+.resume-sidebar h1 {
+  font-size: 1.6rem;
+  margin-bottom: 5px;
+}
+
+.resume-sidebar h2 {
+  font-size: 1rem;
+  font-weight: 400;
+  color: #9a6277;
+  margin-bottom: 20px;
+}
+
+.sidebar-section {
+  margin-top: 30px;
+  text-align: left;
+}
+
+.sidebar-section h3 {
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: #2d2d2d;
+  border-left: 3px solid #9a6277;
+  padding-left: 8px;
+}
+
+.sidebar-section p,
+.sidebar-section li {
+  font-size: 0.9rem;
+  color: #555;
+  margin-bottom: 6px;
+}
+
+.sidebar-section ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* ===== Right Column ===== */
+.resume-main {
+  padding: 40px;
+}
+
+.resume-main section {
+  margin-bottom: 40px;
+}
+
+.resume-main h3 {
+  font-size: 1.3rem;
+  margin-bottom: 15px;
+  color: #2d2d2d;
+  border-bottom: 2px solid #f0f0f0;
+  padding-bottom: 5px;
+}
+
+.resume-main h4 {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #9a6277;
+  margin-top: 20px;
+  margin-bottom: 8px;
+}
+
+.resume-main ul {
+  list-style: disc inside;
+  margin-left: 10px;
+}
+
+.resume-main li {
+  margin-bottom: 6px;
+  color: #444;
+}
+
+/* ===== Skills Progress Bars ===== */
+.skill {
+  margin-bottom: 15px;
+}
+
+.skill-title {
+  font-size: 0.9rem;
+  margin-bottom: 5px;
+  color: #333;
+}
+
+.skill-bar {
+  background: #eee;
+  border-radius: 20px;
+  overflow: hidden;
+  height: 8px;
+}
+
+.skill-progress {
+  height: 8px;
+  background: #9a6277;
+  width: 0;
+  transition: width 1s ease;
+}
+
+/* ===== Buttons ===== */
+.resume-footer {
+  text-align: center;
+  margin-top: 30px;
+}
+
+.resume-footer .btn {
+  display: inline-block;
+  margin: 10px;
+  padding: 10px 20px;
+  border-radius: 8px;
+  background: #9a6277;
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background 0.3s ease;
+}
+
+.resume-footer .btn:hover {
+  background: #7a4c5d;
 }
